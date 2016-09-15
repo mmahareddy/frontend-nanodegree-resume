@@ -1,4 +1,6 @@
-var work : {
+
+
+var work = {
     "jobs" : [
     {
         "Employer" : "NIIT",
@@ -30,9 +32,9 @@ var work : {
         "Description" : "It is a government-sponsored services, through Medicaid, Medicare and Prescription Drug Plans, to families, children, seniors and individuals with complex medical needs."
     }
     ]
-}
+};
 
-var bio : {
+var bio = {
     "name": "Monick Kumar Mahareddy",
     "role" : "Web Developer",
     "welcomeMsg": "Hi welcome to my Resume",
@@ -44,9 +46,9 @@ var bio : {
         "location":"Tampa,FL"
     },
     "skills" : ["MS SQL Server","Oracle","Informatica","HTML&CSS","Javascript","Bootstrap"]
-}
+};
 
-var education: {
+var education= {
     "school": [{
         "name": "Jawaharlal Nehru Technological University, JNTU",
         "location": "Hyderabad, INDIA",
@@ -60,8 +62,6 @@ var education: {
         "dates": "Aug 2010 till May 2012",
         "major": ["Industrial Engineering", "Statistics"]
     }],
-
-
     "onlineEducation": [{
             "Title": "Introduction to HTML and CSS",
             "school": "Udacity",
@@ -73,11 +73,10 @@ var education: {
             "dates": "Sept 2016",
             "url": "https://www.udacity.com/"
         }
-
     ]
-}
+};
 
-var projects : {
+var projects = {
     "projects" : [
 {
     "Title":"Database Maintenance",
@@ -99,7 +98,20 @@ var projects : {
     "date":"Nov 2012- Present",
     "Description":"I.   Worked on Care Gap application which helps find recommended services for a member before their visit. \nII. Worked on Center for Medicare and Medicaid Services (CMS) Audit Reports. These reports are used to validate the data quality in Health Services team by government agencies. \nIII. Worked on Xcelys Application, this is the primary application where the members are entered into the wellcare network. When a set of member needs any adjudications instead of going through each member, a process is set to make changes for bunch of members using wrappers. \nDealt with the member pharmacy information and submits to the Pharmacy Benefit Management (PBM) for daily and monthly updates. "
 }
-
     ]
+};
 
+
+$("#main").append(bio.name);
+
+if (bio.skills.length > 0) {
+    $("#header").append(HTMLskillsStart);
+    var formattedSkill= HTMLskills.replace("%data%",bio.skills[0]);
+    $("#skills").append(formattedSkill);
+     formattedSkill= HTMLskills.replace("%data%",bio.skills[1]);
+    $("#skills").append(formattedSkill);
+     formattedSkill= HTMLskills.replace("%data%",bio.skills[2]);
+    $("#skills").append(formattedSkill);
+     formattedSkill= HTMLskills.replace("%data%",bio.skills[3]);
+    $("#skills").append(formattedSkill);
 }
