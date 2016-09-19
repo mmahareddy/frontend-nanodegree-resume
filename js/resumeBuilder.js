@@ -35,7 +35,7 @@ var work = {
 };
 
 var bio = {
-    "name": "Monick Kumar Mahareddy",
+    "name": "MonickKumar Mahareddy",
     "role" : "Web Developer",
     "welcomeMsg": "Hi welcome to my Resume",
     "biopic": "This is a biopic",
@@ -75,6 +75,8 @@ var education= {
         }
     ]
 };
+
+education.displa
 
 var projects = {
     "projects" : [
@@ -121,8 +123,12 @@ if (bio.skills.length > 0) {
     $("#skills").append(formattedSkill);
      formattedSkill= HTMLskills.replace("%data%",bio.skills[3]);
     $("#skills").append(formattedSkill);
-}
+};
 
+
+
+
+function displaywork(){
 for ( job in work.jobs.reverse()) {
     $("#workExperience").append(HTMLworkStart);
 var workEmployer = HTMLworkEmployer.replace("%data%",work.jobs[job].Employer);
@@ -133,3 +139,34 @@ $(".work-entry:last").append(HTMLworkDates.replace("%data%",work.jobs[job].DateW
 $(".work-entry:last").append(HTMLworkLocation.replace("%data%",work.jobs[job].Location));
 $(".work-entry:last").append(HTMLworkDescription.replace("%data%",work.jobs[job].Description));
 }
+};
+displaywork();
+
+projects.display = function (){
+  for (project in projects.projects.reverse()){
+    $("#projects").append(HTMLprojectStart);
+    $(".project-entry:last").append(HTMLprojectTitle.replace("%data%",projects.projects[project].Title));
+    $(".project-entry:last").append(HTMLprojectDates.replace("%data%",projects.projects[project].date));
+    $(".project-entry:last").append(HTMLprojectDescription.replace("%data%",projects.projects[project].Description));
+  }
+};
+projects.display();
+
+
+
+
+$(document).click(function(loc) {
+  var x = loc.pageX;
+  var y = loc.pageY;
+  logClicks(x,y);
+});
+
+function inName(name){
+    name = name.trim().split(" ");
+    name[1] = name[1].toUpperCase();
+    name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+    return name[0] + name[1];
+}
+
+$("#main").append(internationalizeButton);
+$("#mapDiv").append(googleMap);
